@@ -1,4 +1,4 @@
-<?php namespace NZTim\Logger;
+<?php namespace DestherCZ\Logger;
 
 use InvalidArgumentException;
 use Monolog\Logger as MonologLogger;

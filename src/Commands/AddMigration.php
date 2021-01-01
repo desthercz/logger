@@ -1,4 +1,4 @@
-<?php namespace NZTim\Logger\Commands;
+<?php namespace DestherCZ\Logger\Commands;
 
 use Illuminate\Console\Command;
 

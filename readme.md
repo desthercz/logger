@@ -6,14 +6,14 @@ It logs to local files and optionally provides email alerts.
 ###Installation
 
 Register the service provider:  
-`NZTim\Logger\LoggerServiceProvider::class,`
+`DestherCZ\Logger\LoggerServiceProvider::class,`
 
 Add facade reference:  
-`'Logger' => NZTim\Logger\LoggerFacade::class,`
+`'Logger' => DestherCZ\Logger\LoggerFacade::class,`
 
 ### Configuration
 
-Publish the configuration file with: `php artisan vendor:publish --provider=NZTim\Logger\LoggerServiceProvider`.
+Publish the configuration file with: `php artisan vendor:publish --provider=DestherCZ\Logger\LoggerServiceProvider`.
 
 * `'laravel' => true,` captures Laravel log facade messages
 * `'folder' => 'custom'` sets the default subfolder for custom logs

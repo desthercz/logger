@@ -1,4 +1,4 @@
-<?php namespace NZTim\Logger;
+<?php namespace DestherCZ\Logger;
 
 use Exception;
 use ReflectionClass;

@@ -1,8 +1,8 @@
-<?php namespace NZTim\Logger;
+<?php namespace DestherCZ\Logger;
 
 use Illuminate\Support\ServiceProvider;
 use Log;
-use NZTim\Logger\Commands\AddMigration;
+use DestherCZ\Logger\Commands\AddMigration;
 
 class LoggerServiceProvider extends ServiceProvider
 {

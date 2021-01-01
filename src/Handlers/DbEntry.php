@@ -1,7 +1,7 @@
-<?php namespace NZTim\Logger\Handlers;
+<?php namespace DestherCZ\Logger\Handlers;
 
 use Illuminate\Database\Eloquent\Model;
-use NZTim\Logger\Entry;
+use DestherCZ\Logger\Entry;
 
 /**
  * @method static DbEntry find($id)

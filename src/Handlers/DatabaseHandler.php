@@ -1,6 +1,6 @@
-<?php namespace NZTim\Logger\Handlers;
+<?php namespace DestherCZ\Logger\Handlers;
 
-use NZTim\Logger\Entry;
+use DestherCZ\Logger\Entry;
 
 class DatabaseHandler implements Handler
 {

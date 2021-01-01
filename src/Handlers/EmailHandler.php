@@ -1,9 +1,9 @@
-<?php namespace NZTim\Logger\Handlers;
+<?php namespace DestherCZ\Logger\Handlers;
 
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Mail;
-use NZTim\Logger\Entry;
+use DestherCZ\Logger\Entry;
 use InvalidArgumentException;
 use Monolog\Logger as MonologLogger;
 

@@ -1,7 +1,7 @@
-<?php namespace NZTim\Logger\Handlers;
+<?php namespace DestherCZ\Logger\Handlers;
 
 use Monolog\Handler\RotatingFileHandler;
-use NZTim\Logger\Entry;
+use DestherCZ\Logger\Entry;
 use Monolog\Logger as MonologLogger;
 use Monolog\Handler\StreamHandler;
 

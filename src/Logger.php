@@ -1,10 +1,10 @@
-<?php namespace NZTim\Logger;
+<?php namespace DestherCZ\Logger;
 
 use Illuminate\Support\Facades\Auth;
-use NZTim\Logger\Handlers\DatabaseHandler;
-use NZTim\Logger\Handlers\EmailHandler;
-use NZTim\Logger\Handlers\FileHandler;
-use NZTim\Logger\Handlers\Handler;
+use DestherCZ\Logger\Handlers\DatabaseHandler;
+use DestherCZ\Logger\Handlers\EmailHandler;
+use DestherCZ\Logger\Handlers\FileHandler;
+use DestherCZ\Logger\Handlers\Handler;
 use Throwable;
 
 class Logger

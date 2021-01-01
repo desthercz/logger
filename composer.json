@@ -1,20 +1,20 @@
 {
-  "name": "nztim/logger",
-  "description": "Logging package for Laravel 5",
+  "name": "desthercz/logger",
+  "description": "Logging package for Laravel 5 & 6",
   "license": "MIT",
   "require": {
     "php": ">=7.0.0",
-    "laravel/framework": "^5.1"
+    "laravel/framework": "^5.1|^6.0"
   },
   "autoload": {
     "psr-4": {
-      "NZTim\\Logger\\": "src/"
+      "DestherCZ\\Logger\\": "src/"
     }
   },
   "authors": [
     {
-      "name": "Tim",
-      "email": "tim@nztim.com"
+      "name": "Desther",
+      "email": "desther@seznam.cz"
     }
   ]
 }
