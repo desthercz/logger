@@ -1,4 +1,6 @@
-<?php namespace DestherCZ\Logger;
+<?php
+
+namespace DestherCZ\Logger;
 
 use InvalidArgumentException;
 use Monolog\Logger as MonologLogger;
@@ -18,10 +20,10 @@ class Entry
             throw new InvalidArgumentException('Invalid channel name: ' . $channel);
         }
         $this->level = trim(strtoupper($level));
-        if (!isset(MonologLogger::getLevels()[$this->level])) {
+        if ($this->levelIsNotStandardMonologLevel()) {
             throw new InvalidArgumentException('Level must be a standard Monolog level');
         }
-        $this->code = MonologLogger::getLevels()[$this->level];
+        $this->code = $this->getCode();
         if (empty($message)) {
             throw new InvalidArgumentException('Log entry must contain a message');
         }
@@ -52,5 +54,33 @@ class Entry
     public function context()
     {
         return $this->context;
+    }
+
+    protected function getCode(): string
+    {
+        // for older versions of monolog        
+        if (MonologLogger::API < 3) {
+            return MonologLogger::getLevels()[$this->level];
+        }
+
+        // for version 3 and above
+        if (MonologLogger::API >= 3) {
+            return constant(MonologLogger::class . '::' . $this->level);
+        }
+    }
+
+    protected function levelIsNotStandardMonologLevel(): bool
+    {
+        // for older versions of monolog        
+        if (MonologLogger::API < 3 && !isset(MonologLogger::getLevels()[$this->level])) {
+            return true;
+        }
+
+        // for version 3 and above
+        if (MonologLogger::API >= 3 && !defined(MonologLogger::class . '::' . $this->level)) {
+            return true;
+        }
+
+        return false;
     }
 }
