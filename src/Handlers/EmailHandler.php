@@ -1,4 +1,6 @@
-<?php namespace DestherCZ\Logger\Handlers;
+<?php
+
+namespace DestherCZ\Logger\Handlers;
 
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Cache;
@@ -32,7 +34,20 @@ class EmailHandler implements Handler
         if (!$emailLevel || config('app.debug')) {
             return false;
         }
-        $emailLevelCode = MonologLogger::getLevels()[$emailLevel];
+        $emailLevelCode = $this->getEmailLevelCode($emailLevel);
         return $entry->code() >= $emailLevelCode;
+    }
+
+    protected function getEmailLevelCode($emailLevel)
+    {
+        // for older versions of monolog        
+        if (MonologLogger::API < 3) {
+            return MonologLogger::getLevels()[$emailLevel];
+        }
+
+        // for version 3 and above
+        if (MonologLogger::API >= 3) {
+            return constant(MonologLogger::class . '::' . $emailLevel);
+        }
     }
 }
